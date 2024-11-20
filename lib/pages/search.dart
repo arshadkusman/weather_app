@@ -89,7 +89,7 @@ class _SearchState extends State<Search> {
             children: [
               Padding(
                 padding:
-                    const EdgeInsets.symmetric(horizontal: 20, vertical: 20),
+                    EdgeInsets.symmetric(horizontal: 20.w, vertical: 20.h),
                 child: SingleChildScrollView(
                   child: Column(
                     children: [
@@ -98,8 +98,8 @@ class _SearchState extends State<Search> {
                           Expanded(
                             child: TextField(
                               decoration: InputDecoration(
-                                prefixIcon: const Padding(
-                                  padding: EdgeInsets.symmetric(horizontal: 20),
+                                prefixIcon:  Padding(
+                                  padding: EdgeInsets.symmetric(horizontal: 20.w),
                                   child: Icon(Icons.search),
                                 ),
                                 hintText: 'Search for the Location',
@@ -129,7 +129,7 @@ class _SearchState extends State<Search> {
                           : provider.response == null
                               ? Column(
                                   children: [
-                                    const SizedBox(height: 10),
+                                     SizedBox(height: 10.h),
                                     for (String location in provider.locations)
                                       _weatherInfoCard(location,
                                           provider.weatherData[location]),
@@ -181,7 +181,7 @@ class _SearchState extends State<Search> {
                                                     .first ??
                                                 "",
                                             ""),
-                                        const SizedBox(width: 6),
+                                         SizedBox(width: 6.w),
                                         _dataAndTitleWidget(
                                             provider.response?.location
                                                     ?.localtime
@@ -192,14 +192,14 @@ class _SearchState extends State<Search> {
                                       ],
                                     ),
                                     Padding(
-                                      padding: const EdgeInsets.symmetric(
-                                          horizontal: 30),
+                                      padding:  EdgeInsets.symmetric(
+                                          horizontal: 30.w),
                                       child: Card(
                                         elevation: 0,
                                         color: Colors.white.withOpacity(0.1),
                                         child: Padding(
-                                          padding: const EdgeInsets.symmetric(
-                                              vertical: 10, horizontal: 10),
+                                          padding:  EdgeInsets.symmetric(
+                                              vertical: 10.h, horizontal: 10.w),
                                           child: Row(
                                             mainAxisAlignment:
                                                 MainAxisAlignment.spaceBetween,
@@ -239,9 +239,9 @@ class _SearchState extends State<Search> {
       scrollDirection: Axis.vertical,
       child: Card(
         color: Colors.white.withOpacity(0.3),
-        margin: const EdgeInsets.symmetric(vertical: 14),
+        margin: EdgeInsets.symmetric(vertical: 14.h),
         child: Padding(
-          padding: const EdgeInsets.symmetric(horizontal: 20),
+          padding: EdgeInsets.symmetric(horizontal: 20.w),
           child: Row(
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
@@ -257,7 +257,7 @@ class _SearchState extends State<Search> {
                           fontWeight: FontWeight.w600,
                           color: const Color(0xffFFFFFF)),
                     ),
-                    const SizedBox(height: 5),
+                   SizedBox(height: 5.h),
                     Text(
                       response.current?.condition?.text ?? "",
                       style: TextStyle(
@@ -266,7 +266,7 @@ class _SearchState extends State<Search> {
                         color: Colors.white,
                       ),
                     ),
-                    const SizedBox(height: 15),
+                    SizedBox(height: 15.h),
                     Text(
                       "${response.current?.tempC?.toString() ?? ""}°",
                       style: TextStyle(
@@ -308,7 +308,7 @@ class _SearchState extends State<Search> {
             color: Colors.white,
           ),
         ),
-        const SizedBox(height: 4),
+        SizedBox(height: 4.h),
         Text(
           value,
           style: TextStyle(
@@ -325,12 +325,12 @@ class _SearchState extends State<Search> {
     return Column(
       children: [
         Image.asset(imagePath, height: 40.h, width: 40.w),
-        const SizedBox(height: 10),
+         SizedBox(height: 10.h),
         Text(
           title,
           style: TextStyle(fontSize: 15.sp, color: Colors.white),
         ),
-        const SizedBox(height: 4),
+        SizedBox(height: 4.h),
         Text(
           value,
           style: TextStyle(fontSize: 14.sp, color: Colors.white),

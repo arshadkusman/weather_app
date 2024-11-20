@@ -30,7 +30,7 @@ class DefaultLocationWeatherWidget extends StatelessWidget {
       elevation: 0,
       color: Colors.white.withOpacity(0.2),
       child: Padding(
-        padding: const EdgeInsets.symmetric(horizontal: 10, vertical: 10),
+        padding: EdgeInsets.symmetric(horizontal: 10.w, vertical: 10.h),
         child: Row(
           mainAxisAlignment: MainAxisAlignment.spaceBetween,
           children: [
