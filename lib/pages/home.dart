@@ -94,7 +94,12 @@ class _HomeState extends State<Home> {
           if (provider.inProgress) {
             return const Center(child: CircularProgressIndicator());
           }
-
+          // Store temperature and icon URL to minimize code
+          final String temperature =
+              "${provider.currentLocationResponse?.current?.tempC?.toString() ?? ""}°";
+          final String iconUrl =
+              "https:${provider.currentLocationResponse?.current?.condition?.icon}"
+                  .replaceAll("44x44", "88x88");
           return Stack(
             children: [
               Positioned.fill(
@@ -225,37 +230,16 @@ class _HomeState extends State<Home> {
                         child: Row(
                           mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                           children: [
-                            _forecastCard(
-                                "10 AM",
-                                "https:${provider.currentLocationResponse?.current?.condition?.icon}"
-                                    .replaceAll("44x44", "88x88"),
-                                "${provider.currentLocationResponse?.current?.tempC?.toString() ?? ""}°"),
-                            _forecastCard(
-                                "12 PM",
-                                "https:${provider.currentLocationResponse?.current?.condition?.icon}"
-                                    .replaceAll("44x44", "88x88"),
-                                "${provider.currentLocationResponse?.current?.tempC?.toString() ?? ""}°"),
-                            _forecastCard(
-                                "3 PM",
-                                "https:${provider.currentLocationResponse?.current?.condition?.icon}"
-                                    .replaceAll("44x44", "88x88"),
-                                "${provider.currentLocationResponse?.current?.tempC?.toString() ?? ""}°"),
-                            _forecastCard(
-                                "5 PM",
-                                "https:${provider.currentLocationResponse?.current?.condition?.icon}"
-                                    .replaceAll("44x44", "88x88"),
-                                "${provider.currentLocationResponse?.current?.tempC?.toString() ?? ""}°"),
-                            _forecastCard(
-                                "7 PM",
-                                "https:${provider.currentLocationResponse?.current?.condition?.icon}"
-                                    .replaceAll("44x44", "88x88"),
-                                "${provider.currentLocationResponse?.current?.tempC?.toString() ?? ""}°"),
-                            _forecastCard(
-                                "10 PM",
-                                "https:${provider.currentLocationResponse?.current?.condition?.icon}"
-                                    .replaceAll("44x44", "88x88"),
-                                "${provider.currentLocationResponse?.current?.tempC?.toString() ?? ""}°"),
-                          ],
+                            "10 AM",
+                            "12 PM",
+                            "3 PM",
+                            "5 PM",
+                            "7 PM",
+                            "10 PM"
+                          ]
+                              .map((time) =>
+                                  _forecastCard(time, iconUrl, temperature))
+                              .toList(),
                         ),
                       ),
                       SizedBox(height: 20.h),
