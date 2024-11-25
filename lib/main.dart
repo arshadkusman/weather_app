@@ -8,7 +8,7 @@ import 'package:provider/provider.dart';
 
 void main() {
   runApp(
-    MultiProvider(
+    MultiProvider( 
       providers: [
         ChangeNotifierProvider(create: (_) => WeatherProvider()),
         ChangeNotifierProvider(create: (_) => BottomNavigationProvider()),

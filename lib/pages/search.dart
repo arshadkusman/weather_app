@@ -100,7 +100,7 @@ class _SearchState extends State<Search> {
                               decoration: InputDecoration(
                                 prefixIcon:  Padding(
                                   padding: EdgeInsets.symmetric(horizontal: 20.w),
-                                  child: Icon(Icons.search),
+                                  child: const Icon(Icons.search),
                                 ),
                                 hintText: 'Search for the Location',
                                 filled: true,
