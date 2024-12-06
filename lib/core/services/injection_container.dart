@@ -1,0 +1,9 @@
+import 'package:dio/dio.dart';
+import 'package:get_it/get_it.dart';
+import 'package:weather_app_refactor/src/weather/data/data_source/weather_repo_ds.dart';
+import 'package:weather_app_refactor/src/weather/data/repository/weather_repo_impl.dart';
+import 'package:weather_app_refactor/src/weather/domain/repository/weather_repo.dart';
+import 'package:weather_app_refactor/src/weather/domain/usecases/default_weather_usecase.dart';
+import 'package:weather_app_refactor/src/weather/domain/usecases/weather_usecase.dart';
+import 'package:weather_app_refactor/src/weather/presentation/bloc/weather_bloc/weather_bloc.dart';
+part 'injection_container.main.dart';
